@@ -1,0 +1,119 @@
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.banner-header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.0),
+            rgba(0, 0, 0, 0.5)
+    ),
+    url(../Gallery/rocket_league_banner.jpg) no-repeat;
+    height:140px;
+    left: 0;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+}
+
+.pageTitle{
+    z-index: 100;
+    color: #d3d3d3;
+    font-size: 50px;
+    text-align: center;
+    display: grid;
+    padding: 45px;
+}
+
+.mainPage{
+    margin-top: 140px;
+}
+
+.createChamionship{
+    margin-top: 50px;
+    margin-left: 50px;
+    height: 250px;
+    width: 200px;
+    border: 1px solid black;
+    display: grid;
+}
+
+.topUsersTitle{
+    background-color: #00b5ff;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+}
+
+.topUsersTable{
+    background-color: black;
+    border-collapse: collapse;
+}
+
+.topUsers{
+    float: right;
+    border: solid 1px black;
+    width: 400px;
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: collapse;
+    display: grid;
+}
+
+.topUsersTable th{
+    background-color: #38c6ff;
+    height: 45px;
+    border: solid 1px black;
+}
+
+.topUsersTable td{
+    line-height: 43px;
+    height: 43px;
+    background-color: white;
+    border: solid 1px black;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.footerStyle{
+    display: grid;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+.copyright{
+    text-align: center;
+    font-size: 15px;
+}
+

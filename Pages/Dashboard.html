@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DashBoard Page</title>
+    <title>Dashboard Page</title>
+
+    <link rel="stylesheet" type="text/css" href="../Styles/CommonStyle.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/Dashboard.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase-firestore.js"></script>
+
 </head>
+
 <body>
-    <h1>Dashboard</h1>
+<header class="banner-header">
+    <div class="grid-container">
+        <div class="pageTitle">Championship</div>
+    </div>
+</header>
+
+<div class="mainPage">
+    <div class="topUsers">
+        <div class="topUsersTitle">Top Users</div>
+        <table class="topUsersTable">
+            <thead>
+            <tr>
+                <th>User</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Test</td>
+                <td>0</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="createChamionship"></div>
+
+</div>
+
+<button onclick="getTopUsersFromDB()">Top Users</button>
+
+<footer class="footerStyle">
+    <div class="copyright">Copyright© Razvan Dorcioman</div>
+</footer>
+
+<script src="../Javascripts/UsersDB.js"></script>
+<script src="../Javascripts/DBconnection.js"></script>
+<script src="../Javascripts/Dashboard.js"></script>
+
 </body>
 </html>

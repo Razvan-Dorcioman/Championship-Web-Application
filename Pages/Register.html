@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../Styles/Register.css">
     <link rel="stylesheet" type="text/css" href="../Styles/CommonStyle.css">
@@ -11,39 +14,45 @@
 
     <script src="../Javascripts/DBconnection.js"></script>
 </head>
-<body background="../Gallery/bgphoto.png">
+<body>
 
-<form id="registerForm" method="post" action="" onsubmit="getInputFromRegister();return false">
-    <div class="container">
-        <h1>Register</h1>
-        <label for="username"><b>Username</b></label>
-        <input id="inputUser" class="inputText" type="text" placeholder="Enter Username" name="username" onchange="checkUsernameDB()" required>
-        <p id="userErrMsg" class="errMsg"></p>
+<div class="formDiv">
+    <form id="registerForm" method="post" onsubmit="getInputFromRegister();return false">
+        <div class="container">
+            <h1>Register</h1>
+            <label><b>Username</b></label>
+            <input id="inputUser" class="inputText" type="text" placeholder="Enter Username" name="username"
+                   onchange="checkUsernameDB()" required>
+            <p id="userErrMsg" class="errMsg"></p>
 
-        <label for="email"><b>Email</b></label>
-        <input id="inputEmail" class="inputText" type="email" placeholder="Enter Email" name="email" onchange="checkEmailDB()" required>
-        <p id="emailErrMsg" class="errMsg"></p>
+            <label><b>Email</b></label>
+            <input id="inputEmail" class="inputText" type="email" placeholder="Enter Email" name="email"
+                   onchange="checkEmailDB()" required>
+            <p id="emailErrMsg" class="errMsg"></p>
 
-        <label for="psw"><b>Password</b></label>
-        <input id="inputPwd" class="inputText" type="password" placeholder="Enter Password" name="psw" onchange="checkPwd()"
-               title="Must contain at least 8 or more characters" required>
+            <label><b>Password</b></label>
+            <input id="inputPwd" class="inputText" type="password" placeholder="Enter Password" name="psw"
+                   onchange="checkPwd()"
+                   title="Must contain at least 8 or more characters" required>
 
-        <p id="pwdErrMsg" class="errMsg"></p>
+            <p id="pwdErrMsg" class="errMsg"></p>
 
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input id="inputRepPwd" class="inputText" type="password" placeholder="Repeat Password" name="psw-repeat" onchange="checkRepeatPwd()" required>
-        <p id="pwdRepErrMsg" class="errMsg"></p>
+            <label><b>Repeat Password</b></label>
+            <input id="inputRepPwd" class="inputText" type="password" placeholder="Repeat Password" name="psw-repeat"
+                   onchange="checkRepeatPwd()" required>
+            <p id="pwdRepErrMsg" class="errMsg"></p>
 
-        <button type="submit" class="registerbtn" onclick="getInputFromRegister()">Register</button>
-    </div>
+            <button type="submit" class="registerbtn" onclick="getInputFromRegister()">Register</button>
+        </div>
 
-    <div class="container signin">
-        <p>Already have an account?<br><a href="Login.html">Sign in</a>.</p>
-    </div>
-</form>
+        <div class="container signin">
+            <p>Already have an account?<br><a href="Login.html">Sign in</a>.</p>
+        </div>
+    </form>
+</div>
 
-<script src="../Javascripts/Register.js"></script>
 <script src="../Javascripts/UsersDB.js"></script>
+<script src="../Javascripts/Register.js"></script>
 
 </body>
 </html>

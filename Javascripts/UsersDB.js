@@ -1,9 +1,12 @@
+import * as db from "@google-cloud/firestore";
+
 function insertUserIntoDB(username, email, password) {
     var docName = username;
     db.collection("users").doc(docName).set({
         username: username,
         email: email,
         password: password,
+        score: 0,
         gameCreated: 0
     }).then(function() {
         alert('Register success!');
@@ -57,7 +60,7 @@ function verifyUserDB(){
     const logObj = document.getElementById("loginForm");
     var username = logObj.elements[0].value;
     var password = logObj.elements[1].value;
-    console.log("Aici!!!");
+
     const usersRef = db.collection('users').doc(username);
 
     usersRef.get()
@@ -78,5 +81,28 @@ function verifyUserDB(){
                 document.getElementById("userLogin").style.borderColor = "red";
             }
         });
+}
+
+var topUsersState = false;
+function selectTopUsers(){
+
+    const usersRef = db.collection('users');
+    const query = usersRef.orderBy("score").limit(10);
+    var users = [];
+
+    query.get().then(function(querySnapshot){
+        querySnapshot.forEach(function(doc){
+            if(doc.exists) {
+                var item = doc.data();
+                users.push(resolve(item));
+                topUsersState = true;
+            }
+            else{
+                console.log('Document is empty!');
+                topUsersState = false;
+            }
+        });
+    });
+    return users;
 }
 

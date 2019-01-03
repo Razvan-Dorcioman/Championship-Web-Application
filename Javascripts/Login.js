@@ -1,5 +1,3 @@
 function getInputFromLogin(){
-
-
     verifyUserDB(username);
 }

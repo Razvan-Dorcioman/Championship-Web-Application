@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../Styles/Login.css">
@@ -12,29 +13,32 @@
 
     <script src="../Javascripts/DBconnection.js"></script>
 </head>
-<body background="../Gallery/bgphoto.png">
+<body>
 
-<form id="loginForm" method="post" action="" onsubmit="getInputFromLogin()">
-    <h1>Login</h1>
+<div class="formDiv">
+    <form id="loginForm" method="post" onsubmit="getInputFromLogin()">
+        <h1>Login</h1>
 
-    <div class="container" method="post">
-        <label><b>Username</b></label>
-        <input id="userLogin" class="inputText" type="text" placeholder="Enter Username" name="username" required>
-        <p id="userLoginMsg" class="errMsg"></p>
+        <div class="container">
+            <label><b>Username</b></label>
+            <input id="userLogin" class="inputText" type="text" placeholder="Enter Username" name="username" required>
+            <p id="userLoginMsg" class="errMsg"></p>
 
-        <label for="psw"><b>Password</b></label>
-        <input id="pwdLogin" class="inputText" type="password" placeholder="Enter Password" name="psw" required>
-        <p id="pwdLoginMsg" class="errMsg"></p>
+            <label><b>Password</b></label>
+            <input id="pwdLogin" class="inputText" type="password" placeholder="Enter Password" name="psw" required>
+            <p id="pwdLoginMsg" class="errMsg"></p>
 
-        <button type="submit" onclick="verifyUserDB(); return false">Login</button>
-    </div>
+            <button type="submit" onclick="verifyUserDB(); return false">Login</button>
+        </div>
 
-    <div class="container signin">
-        <p class="psw">Doesn't have an account yet?<br><a href="Register.html">Sign up!</a></p>
-    </div>
-</form>
+        <div class="container signin">
+            <p class="psw">Doesn't have an account yet?<br><a href="Register.html">Sign up!</a></p>
+        </div>
+    </form>
+</div>
 
-<script src="../Javascripts/Login.js"></script>
 <script src="../Javascripts/UsersDB.js"></script>
+<script src="../Javascripts/Login.js"></script>
+
 </body>
 </html>

@@ -4,6 +4,7 @@
       <w>appspot</w>
       <w>bconnection</w>
       <w>bgphoto</w>
+      <w>chamionship</w>
       <w>ddhv</w>
       <w>dorcioman</w>
       <w>firebase</w>
@@ -14,6 +15,8 @@
       <w>razvan</w>
       <w>registerbtn</w>
       <w>signin</w>
+      <w>tbody</w>
+      <w>textnode</w>
     </words>
   </dictionary>
 </component>
