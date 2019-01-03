@@ -1,5 +1,3 @@
-import * as db from "@google-cloud/firestore";
-
 function insertUserIntoDB(username, email, password) {
     var docName = username;
     db.collection("users").doc(docName).set({
@@ -94,7 +92,7 @@ function selectTopUsers(){
         querySnapshot.forEach(function(doc){
             if(doc.exists) {
                 var item = doc.data();
-                users.push(resolve(item));
+                users.push(item);
                 topUsersState = true;
             }
             else{
@@ -103,6 +101,7 @@ function selectTopUsers(){
             }
         });
     });
+
     return users;
 }
 

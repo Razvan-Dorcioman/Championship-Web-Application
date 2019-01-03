@@ -1,12 +1,16 @@
 function getTopUsersFromDB(){
+    var usersArray = selectTopUsers();
+    document.getElementById("loadingIcon").style.display = 'block';
 
-    if(topUsersState === true) {
-        var usersArray = selectTopUsers();
-        console.log(usersArray[1].score);
+    while(topUsersState === false) {
+        setTimeout(console.log('Loading'), 1000);
     }
-    else{
-        console.log('Inca se incarca');
-    }
+
+    document.getElementById("loadingIcon").style.display = 'none';
+
+    console.log(usersArray[1].score);
+
+
 }
 
 function addRowInTable(user, score)
