@@ -40,17 +40,61 @@
     </div>
 
     <div class="createChamionship">
-        <div class="plus-button">
+        <div class="plus-button" onclick="openSettings()">
             <div class="plus-sign">+</div>
         </div>
     </div>
 
 </div>
 
-<!--<button onclick="getTopUsersFromDB()">Top Users</button>
+<div class="settingsPanel" id="settings">
+    <div class="settings-content">
+        <div class="settings-header">
+            <span class="x-button" id="close" onclick="closeSettings()">&times;</span>
+            <h2>Settings Panel</h2>
+        </div>
+        <div class="settings-body">
+            <div class="row">
+                <div class="column left">
+                    <label class="settingsLabel"><b>Name</b></label>
+                    <input class="settingsInput" type="text" placeholder="Enter name" name="name" required>
 
-<div class="loader" id="loadingIcon"></div>-->
+                    <label class="settingsLabel"><b>Number of teams</b></label>
+                    <div class="dropDown">
+                        <button id="dropTeams" class="dropButton">Select...</button>
+                        <div class="dropButton-content">
+                            <a onclick="setNumberOfTeams('2')">2</a>
+                            <a onclick="setNumberOfTeams('4')">4</a>
+                            <a onclick="setNumberOfTeams('8')">8</a>
+                            <a onclick="setNumberOfTeams('16')">16</a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="column right">
+                    <label class="settingsLabel"><b>Game Type</b></label>
+                    <div class="dropDown">
+                        <button id="dropGames" class="dropButton">Select...</button>
+                        <div class="dropButton-content">
+                            <a onclick="setGameType('Counter Strike : Global Offensive')">Counter Strike : Global Offensive</a>
+                            <a onclick="setGameType('Rocket League')">Rocket League</a>
+                            <a onclick="setGameType('Battlefield 5')">Battlefield 5</a>
+                            <a onclick="setGameType('Fifa 19')">Fifa 19</a>
+                        </div>
+                    </div>
+
+                    <div id="teams"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="settings-footer">
+            <button class="createBtn">Create</button>
+        </div>
+    </div>
+</div>
+
+<!--<button onclick="getTopUsersFromDB()">Top Users</button>-->
 <footer class="footerStyle">
     <div class="copyright">Copyright© Razvan Dorcioman</div>
 </footer>
