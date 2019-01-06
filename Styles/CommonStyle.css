@@ -5,6 +5,34 @@ body{
     background: url("../Gallery/bgphoto.jpg") no-repeat;
 }
 
+.homeBody{
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    text-align: center;
+    background: url("../Gallery/csgo.jpg") no-repeat;
+}
+
+.homeBtn{
+    width: 150px;
+    height: 75px;
+    line-height: 75px;
+    border-radius: 25px;
+    background-color: #00BFFF;
+    font-size: 18px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-decoration: none;
+}
+
+.homeBtn:hover{
+    background-color: #1cb6d8;
+}
+
 .inputText {
     width: 100%;
     padding: 12px 20px;
