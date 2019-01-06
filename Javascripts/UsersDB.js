@@ -67,7 +67,9 @@ function verifyUserDB(){
                 document.getElementById("userLoginMsg").innerHTML = "";
                 document.getElementById("userLogin").style.borderColor = "green";
                 if(docSnapshot.data().password === password){
-                    console.log("Success!");
+                    localStorage.setItem('logUser', docSnapshot.data().username);
+                    localStorage.setItem('logScore', docSnapshot.data().score);
+                    localStorage.setItem('logGameCreated', docSnapshot.data().gameCreated);
                     window.location.href = './Dashboard.html';
                 }
                 else{
@@ -85,14 +87,17 @@ var topUsersState = false;
 function selectTopUsers(){
 
     const usersRef = db.collection('users');
-    const query = usersRef.orderBy("score").limit(10);
-    var users = [];
+    const query = usersRef.orderBy("score" , "desc").limit(11);
+    var i = 1;
 
     query.get().then(function(querySnapshot){
         querySnapshot.forEach(function(doc){
             if(doc.exists) {
-                var item = doc.data();
-                users.push(item);
+                var username = doc.data().username;
+                var score = doc.data().score;
+                localStorage.setItem('topUsers' + i, username);
+                localStorage.setItem('topScore' + i, score);
+                i++;
                 topUsersState = true;
             }
             else{
@@ -101,7 +106,5 @@ function selectTopUsers(){
             }
         });
     });
-
-    return users;
 }
 

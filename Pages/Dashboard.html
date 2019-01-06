@@ -17,24 +17,22 @@
 <header class="banner-header">
     <div class="grid-container">
         <div class="pageTitle">Championship</div>
+        <div id="welcome"></div>
     </div>
 </header>
 
-<div class="mainPage">
+<div class="mainPage" id="mainPage">
     <div class="topUsers">
         <div class="topUsersTitle">Top Users</div>
         <table class="topUsersTable">
             <thead>
             <tr>
+                <th>Nr.</th>
                 <th>User</th>
                 <th>Score</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>Test</td>
-                <td>0</td>
-            </tr>
+            <tbody id="tableBody">
             </tbody>
         </table>
     </div>
@@ -57,7 +55,7 @@
             <div class="row">
                 <div class="column left">
                     <label class="settingsLabel"><b>Name</b></label>
-                    <input class="settingsInput" type="text" placeholder="Enter name" name="name" required>
+                    <input id="gameName" class="settingsInput" type="text" placeholder="Enter name" name="name" required>
 
                     <label class="settingsLabel"><b>Number of teams</b></label>
                     <div class="dropDown">
@@ -86,21 +84,21 @@
                     <div id="teams"></div>
                 </div>
             </div>
-
+            <p id="emptyFields" class="champErrMsg">Complete all fields!</p>
         </div>
         <div class="settings-footer">
-            <button class="createBtn">Create</button>
+            <button class="createBtn" onclick="createChampionship()">Create</button>
         </div>
     </div>
 </div>
 
-<!--<button onclick="getTopUsersFromDB()">Top Users</button>-->
 <footer class="footerStyle">
-    <div class="copyright">Copyright© Razvan Dorcioman</div>
+    <div class="copyright">Copyright&copy; Razvan Dorcioman</div>
 </footer>
 
 <script src="../Javascripts/UsersDB.js"></script>
 <script src="../Javascripts/DBconnection.js"></script>
+<script src="../Javascripts/GamesDB.js"></script>
 <script src="../Javascripts/Dashboard.js"></script>
 
 </body>

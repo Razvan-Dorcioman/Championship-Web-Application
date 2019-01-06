@@ -16,3 +16,11 @@ db.collection('users').doc('test').set({
     password: 'test',
     gameCreated: 0
 });
+
+db.collection('games').doc('test').set({
+    name:'test',
+    game: 'test',
+    teams: 0,
+    players: 0,
+    owner: 'test'
+});
